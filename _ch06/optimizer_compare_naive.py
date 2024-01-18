@@ -1,10 +1,10 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.curdir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
-from optimizer import *
+from common.optimizer import *
 
 
 def f(x, y):
@@ -25,7 +25,7 @@ optimizers = OrderedDict()
 optimizers["SGD"] = SGD(lr=0.95)
 optimizers["Momentum"] = Momentum(lr=0.1)
 optimizers["AdaGrad"] = AdaGrad(lr=1.5)
-#optimizers["Adam"] = Adam(lr=0.3)
+optimizers["Adam"] = Adam(lr=0.3)
 
 idx = 1
 
